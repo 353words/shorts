@@ -1,25 +1,5 @@
-/*
-#golang #gem: Use labels to break from nested loops and switch cases.
+// Use labels to break from nested loops and switch cases.
 
-func processEvents(ctx context.Context, ch <-chan Event) {
-	count, start := 0, time.Now()
-loop:
-	for {
-		select {
-		case e, ok := <-ch:
-			if !ok {
-				break loop
-			}
-			handleEvent(e)
-			count++
-		case <-ctx.Done():
-			break loop
-		}
-	}
-	log.Printf("processed %d events in %v", count, time.Since(start))
-}
-
-*/
 package main
 
 import (
@@ -27,13 +7,6 @@ import (
 	"log"
 	"time"
 )
-
-type Event struct{}
-
-func handleEvent(e Event) {
-	time.Sleep(17 * time.Millisecond)
-	log.Printf("event")
-}
 
 func processEvents(ctx context.Context, ch <-chan Event) {
 	count, start := 0, time.Now()
@@ -67,4 +40,13 @@ func main() {
 	}()
 
 	processEvents(ctx, ch)
+}
+
+// ---
+
+type Event struct{}
+
+func handleEvent(e Event) {
+	time.Sleep(17 * time.Millisecond)
+	log.Printf("event")
 }

@@ -1,10 +1,5 @@
-/*
-#golang gem: You can use io.MultiWriter to write to several destinations
+// Use io.MultiWriter to write to several destinations.
 
-w := io.MultiWriter(file, os.Stdout)
-logger := log.New(w, "app: ", log.LstdFlags)
-logger.Printf("INFO: %q logged in", "joe")
-*/
 package main
 
 import (
@@ -15,7 +10,7 @@ import (
 
 func main() {
 	flag := os.O_APPEND | os.O_CREATE | os.O_WRONLY
-	file, err := os.OpenFile("/tmp/app.log", flag, 0644)
+	file, err := os.OpenFile("app.log", flag, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -23,6 +18,7 @@ func main() {
 
 	w := io.MultiWriter(file, os.Stdout)
 	logger := log.New(w, "app: ", log.LstdFlags)
-	logger.Printf("INFO: %q logged in", "joe")
-	// app: 2020/10/07 14:00:11 INFO: "joe" logged in
+	logger.Printf("INFO: %q logged in", "eliot")
+	// app: 2023/04/02 12:16:36 INFO: "eliot" logged in
+	// both in stdout and app.log
 }

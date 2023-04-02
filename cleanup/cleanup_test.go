@@ -1,24 +1,28 @@
-/*
-#golang #gem: Use t.Cleanup to close resources after tests.
+// Use t.Cleanup to close resources after tests.
+
+package main
+
+import "testing"
 
 func createDB(t testing.TB) *DB {
 	db, err := db.New()
 	if err != nil {
 		t.Fatalf("db.New() -> %s", err)
 	}
-	t.Cleanup(func() { db.Close() })
+
+	t.Cleanup(func() {
+		db.Close()
+	})
 	return db
 }
 
 func TestDB(t *testing.T) {
 	db := createDB(t)
 	t.Logf("db = %v", db)
-	// work with db
+	// TODO: work with db
 }
-*/
-package main
 
-import "testing"
+// ---
 
 type DB struct{}
 
@@ -31,18 +35,3 @@ func (db *DB) Close() error {
 }
 
 var db *DB
-
-func createDB(t testing.TB) *DB {
-	db, err := db.New()
-	if err != nil {
-		t.Fatalf("db.New() -> %s", err)
-	}
-	t.Cleanup(func() { db.Close() })
-	return db
-}
-
-func TestDB(t *testing.T) {
-	db := createDB(t)
-	t.Logf("db = %v", db)
-	// work with db
-}
