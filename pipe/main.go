@@ -9,6 +9,8 @@ import (
 )
 
 func main() {
+	// grep func pipe.go | wc -l
+
 	grep := exec.Command("grep", "func", "pipe.go")
 	out, err := grep.StdoutPipe()
 	if err != nil {
