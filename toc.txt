@@ -1,0 +1,38 @@
+cleanup
+    Use t.Cleanup to close resources after tests.
+label
+    Use labels to break from nested loops and switch cases.
+test_main
+    Use TestMain for package level setup/teardown (fixtures).
+pipe
+    You can pipe output from one exec.Command to the other.
+expandenv
+    Use os.ExpandEnv to expand environment variables in a string.
+fold
+    Use strings.EqualFold for Unicode aware case insensitive comparison.
+is_alive
+    Send signal 0 to check if a process is alive.
+net_ip
+    Use the "net" package to check if IP is in a network.
+regexp_fn
+    regexp can use functions for substitution.
+io_multi
+    Use io.MultiWriter to write to several destinations.
+http_flusher
+    Use http.Flusher to stream data (chunked transfer encoding).
+fmt_loc
+    fmt.Printf can access arguments by location.
+stringer
+    Use golang.org/x/tools/cmd/stringer to generate fmt.Stringer for your types.
+raw_string
+    Use raw strings to escape \ or create multiline strings.
+server
+    Use your own HTTP router and server to avoid third party packages injecting handlers.
+compound_key
+    You can use struct as a compound key in maps.
+make
+    "make" has a 3 parameter for initial capacity to avoid redundant memory allocations.
+fmt_star
+    Use * to dynamically pass flags to fmt verbs.
+json_binary
+    encoding/json will marshal []byte in base64
