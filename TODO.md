@@ -52,6 +52,9 @@ json_stream
 
     fmt.Println(net.String())
 
+    https://en.wikipedia.org/wiki/Chunked_transfer_encoding
+    ref flusher short
+
 limit
 
     $ cat /dev/random| head -c 200 > /tmp/req
