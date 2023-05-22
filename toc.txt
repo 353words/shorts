@@ -1,3 +1,37 @@
+--- Second Recording ---
+
+client
+    Replace http.Client.Transport with your own http.RoundTripper to mock errors.
+
+discard
+    Use ioutil.Discard to discard output.
+
+for_range
+    Use empty "for range items" to run len(items) iterations.
+
+fmt_num
+    Use x/text to format numbers.
+
+json_stream
+    The encoding/json encoder/decoder can stream output/input:
+
+limit
+    http.MaxBytesReader to avoid reading too much into memory.
+
+nfc
+    Use golang.org/x/text/unicode/norm to normalize Unicode strings.
+
+trimpath
+    Use the -trimpath build flag to get relative path stack traces.
+
+tz
+    The "time" package has built-in support for time zones.
+
+word_freq
+    map will return the zero value for missing keys, useful for counting.
+
+--- First Recording ---
+
 cleanup
     Use t.Cleanup to close resources after tests.
 label
