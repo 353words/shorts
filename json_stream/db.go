@@ -32,7 +32,7 @@ func (r *Rows) Event() Event {
 		Time:   t,
 		User:   "elliot",
 		Action: "READ",
-		URI:    fmt.Sprintf("/reports/sec/%d.txt", r.n),
+		URI:    fmt.Sprintf("file:///reports/sec/%d.txt", r.n),
 	}
 }
 
