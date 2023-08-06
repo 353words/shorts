@@ -29,6 +29,8 @@ tee.go
 time_equal.go
 user.go
 
+## Done
+
 ### Second Recording
 
 client
@@ -86,7 +88,6 @@ tz
 word_freq
 
 
-## Done
 
 ### First Recording
 
