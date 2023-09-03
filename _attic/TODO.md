@@ -2,13 +2,11 @@
 
 bp.go
 caller.go
-cfg.go
 du.go
 empty_select.go
 expvar.go
 file_srv.go
 fwd.go
-grades.go
 gz.go
 http_const.go
 http_test.go
@@ -16,7 +14,6 @@ jscape.go
 multierr.go
 once.go
 println.go
-rate.go
 report.go
 req_ctx.go
 rune_size.go
@@ -26,10 +23,72 @@ slice.go
 srv_test.go
 sql_named.go
 tee.go
-time_equal.go
 user.go
+tabw.go
+generics_ptr.go
+report.go
+enc.go
+caller.go
+
 
 ## Done
+
+### Third Recording
+
+
+config_dir
+
+equal_time
+
+    monotonic clock
+
+greedy
+
+    MustCompile
+
+    https://regex101.com/
+    https://pkg.go.dev/regexp/syntax
+
+race
+
+    $ go test -race counter_test.go
+
+    https://pkg.go.dev/sync#Mutex
+    https://pkg.go.dev/sync/atomic#AddInt64
+
+    https://go.dev/doc/articles/race_detector#Runtime_Overheads
+    use in tests
+
+rate
+
+    https://pkg.go.dev/golang.org/x/time/rate#Limiter
+
+    hey -n 1000 http://localhost:8080 
+
+rename_import
+
+    If use url can't call variable url
+    Don't do this in general
+
+request_ctx
+
+    curl http://localhost:8080
+
+    https://github.com/ardanlabs/service/blob/master/foundation/web/context.go
+
+search
+
+    https://pkg.go.dev/sort#Search
+
+sigpipe
+
+	$ go run seq.go | head
+
+skip
+
+    $ go test -v
+    $ CI=yes go test -v
+
 
 ### Second Recording
 
