@@ -72,6 +72,7 @@ rename_import
 
 request_ctx
 
+    https://pkg.go.dev/net/http#Request.Clone
     curl http://localhost:8080
 
     https://github.com/ardanlabs/service/blob/master/foundation/web/context.go

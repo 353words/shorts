@@ -1,3 +1,36 @@
+--- Third Recording ---
+
+config_dir
+    Use os.UserConfigDir to get the default configuration directory.
+
+equal_time
+    Use Time.Equal (not ==) to compare times.
+
+greedy
+    Use `re?` or `(?U:re)` to make regular expressions non-greedy.
+
+race
+    Use "go test -race" to detect race conditions.
+
+rate
+    Use golang.org/x/time/rate for rate limiting.
+
+rename_import
+    You can rename imports to avoid name collision.
+
+request_ctx
+    Use http.Request.Clone to add values to request Context.
+
+search
+    Use slices.BinarySearch or sort.Search and friends to do a binary search.
+
+sigpipe
+    Get rid of "signal: broken pipe" errors by catching SIGPIPE.
+
+skip
+    Use t.Skip to skip tests.
+
+
 --- Second Recording ---
 
 client
