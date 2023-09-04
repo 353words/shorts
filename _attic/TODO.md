@@ -38,6 +38,9 @@ caller.go
 
 config_dir
 
+    viper
+    ardanlabs/conf
+
 equal_time
 
     monotonic clock
@@ -62,6 +65,7 @@ race
 rate
 
     https://pkg.go.dev/golang.org/x/time/rate#Limiter
+    https://github.com/rakyll/hey
 
     hey -n 1000 http://localhost:8080 
 
@@ -80,10 +84,6 @@ request_ctx
 search
 
     https://pkg.go.dev/sort#Search
-
-sigpipe
-
-	$ go run seq.go | head
 
 skip
 
