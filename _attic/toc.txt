@@ -1,3 +1,38 @@
+--- Fourth Recording ---
+
+http_test
+    Use httptest.NewRequest and http.NewRecorder to test your HTTP handlers.
+
+num_chars
+    Use utf8.RuneCountInString to count number of runes (code points/characters) in a string.
+
+breakpoint
+    Use runtime.Breakpoint for "manual" breakpoints.
+
+embed_fs
+    You can embed a directory of assets in your application.
+
+full_slice
+    Use full slice expression to prevent bugs.
+
+sha1
+    Crypto hashes implement io.Writer.
+
+sql_named
+    Use sql.Named to pass parameters by name to SQL queries.
+
+http_const
+    The net/http package defines several useful constants.
+
+caller
+    Use runtime.Caller to get file/line information.
+
+zero
+    Define a "zero" function to return zero values from generics functions.
+    
+gz
+    Use gzip to add compression to HTTP handlers.
+
 --- Third Recording ---
 
 config_dir

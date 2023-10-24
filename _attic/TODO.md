@@ -1,37 +1,62 @@
 ## TODO
 
-bp.go
-caller.go
-du.go
 empty_select.go
+enc.go
 expvar.go
-file_srv.go
+fin.go
 fwd.go
-gz.go
-http_const.go
-http_test.go
+generics_ptr.go
 jscape.go
 multierr.go
 once.go
 println.go
 report.go
-req_ctx.go
-rune_size.go
-sha1.go
 since.go
-slice.go
 srv_test.go
-sql_named.go
+tabw.go
 tee.go
 user.go
-tabw.go
-generics_ptr.go
-report.go
-enc.go
-caller.go
 
 
 ## Done
+
+## Fourth Recording
+
+http_test
+    run & curl http://localhost:8080/api/health
+
+num_chars
+    https://go.dev/blog/strings
+
+breakpoint
+    Run with debugger
+    Run without debugger
+
+embed_fs
+    http://localhost:8080/static/logo.svg
+
+full_slice
+    https://go.dev/ref/spec#Slice_expressions
+
+sha1
+    https://pkg.go.dev/crypto/sha1
+    sha1sum httpd.log.gz
+
+sql_named
+    Not all drivers implement it.
+
+http_const
+    https://pkg.go.dev/net/http#pkg-constants
+
+caller
+    https://github.com/pkg/errors
+
+zero
+    https://github.com/golang/go/issues/61372
+    
+gz
+    curl -H 'Accept-Encoding: gzip' http://localhost:8080
+    curl -H 'Accept-Encoding: gzip' http://localhost:8080 | gunzip
 
 ### Third Recording
 

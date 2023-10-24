@@ -4,6 +4,7 @@ go 1.21
 
 require (
 	github.com/google/uuid v1.3.1
+	github.com/mattn/go-sqlite3 v1.14.17
 	github.com/stretchr/testify v1.8.4
 	golang.org/x/exp v0.0.0-20231006140011-7918f672742d
 	golang.org/x/text v0.13.0
