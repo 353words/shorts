@@ -1,12 +1,12 @@
 module shorts
 
-go 1.20
+go 1.21
 
 require (
 	github.com/google/uuid v1.3.1
-	github.com/stretchr/testify v1.8.3
-	golang.org/x/exp v0.0.0-20230522175609-2e198f4a06a1
-	golang.org/x/text v0.12.0
+	github.com/stretchr/testify v1.8.4
+	golang.org/x/exp v0.0.0-20231006140011-7918f672742d
+	golang.org/x/text v0.13.0
 	golang.org/x/time v0.3.0
 )
 
