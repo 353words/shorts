@@ -55,8 +55,9 @@ zero
     https://github.com/golang/go/issues/61372
     
 gz
-    curl -H 'Accept-Encoding: gzip' http://localhost:8080
-    curl -H 'Accept-Encoding: gzip' http://localhost:8080 | gunzip
+    curl http://localhost:8080/agents
+    curl -H 'Accept-Encoding: gzip' http://localhost:8080/agents
+    curl -H 'Accept-Encoding: gzip' http://localhost:8080/agents | gunzip
 
 ### Third Recording
 

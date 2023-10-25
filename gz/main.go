@@ -2,14 +2,15 @@ package main
 
 import (
 	"compress/gzip"
-	"encoding/csv"
+	"encoding/json"
 	"io"
 	"log"
 	"net/http"
+	"strings"
 )
 
 func main() {
-	http.HandleFunc("/", dataHandler)
+	http.HandleFunc("/agents", agentsHandler)
 
 	addr := ":8080"
 	log.Printf("info: server starting on %s", addr)
@@ -18,28 +19,40 @@ func main() {
 	}
 }
 
-func dataHandler(w http.ResponseWriter, r *http.Request) {
+func agentsHandler(w http.ResponseWriter, r *http.Request) {
 	var wtr io.Writer = w
-	if r.Header.Get("Accept-Encoding") == "gzip" {
+	if strings.Contains(r.Header.Get("Accept-Encoding"), "gzip") {
 		w.Header().Set("Content-Encoding", "gzip")
 		gzw := gzip.NewWriter(w)
 		defer gzw.Close()
 		wtr = gzw
 	}
 
-	w.Header().Set("Content-Type", "text/csv")
-	cw := csv.NewWriter(wtr)
-	defer cw.Flush()
-	for _, row := range query() {
-		cw.Write(row)
+	w.Header().Set("Content-Type", "application/json")
+	enc := json.NewEncoder(wtr)
+	reply := map[string]any{
+		"agents": db.QueryAgents(),
+	}
+	if err := enc.Encode(reply); err != nil {
+		log.Printf("error: can't encode - %s", err)
 	}
 }
 
-func query() [][]string {
-	return [][]string{
-		{"agent", "lat", "lng", "status"},
-		{"007", "1", "2", "free"},
-		{"Q", "3", "4", "busy"},
-		{"M", "5", "6", "free"},
+type Agent struct {
+	ID     string
+	Lat    float64
+	Lng    float64
+	Status string
+}
+
+var db DB
+
+type DB struct{}
+
+func (db DB) QueryAgents() []Agent {
+	return []Agent{
+		{"007", 51.4871871, -0.1270659, "free"},
+		{"Q", 51.4871881, -0.1270759, "busy"},
+		{"M", 51.4871878, -0.1270259, "free"},
 	}
 }
