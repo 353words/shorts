@@ -1,14 +1,14 @@
 module shorts
 
-go 1.21
+go 1.23
 
 require (
-	github.com/google/uuid v1.3.1
-	github.com/mattn/go-sqlite3 v1.14.17
-	github.com/stretchr/testify v1.8.4
-	golang.org/x/exp v0.0.0-20231006140011-7918f672742d
-	golang.org/x/text v0.13.0
-	golang.org/x/time v0.3.0
+	github.com/google/uuid v1.6.0
+	github.com/mattn/go-sqlite3 v1.14.24
+	github.com/stretchr/testify v1.10.0
+	golang.org/x/exp v0.0.0-20250106191152-7588d65b2ba8
+	golang.org/x/text v0.21.0
+	golang.org/x/time v0.9.0
 )
 
 require (
